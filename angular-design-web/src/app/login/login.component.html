@@ -1,0 +1,17 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" formControlName="username">
+    <div *ngIf="myForm.get('username')?.invalid && (myForm.get('username')?.dirty || myForm.get('username')?.touched)">
+      <span *ngIf="myForm.get('username')?.errors">Username is required.</span>
+    </div>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" formControlName="password">
+    <div *ngIf="myForm.get('password')?.invalid && (myForm.get('password')?.dirty || myForm.get('password')?.touched)">
+      <span *ngIf="myForm.get('password')?.errors">Password is required.</span>
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>
