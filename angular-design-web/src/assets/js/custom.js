@@ -15,18 +15,28 @@ jQuery(document).ready(function ($) {
   });
 });
 
-$(".toggle").click(function () {
-  $(this).children("i").toggleClass("fa-pencil");
-  $(".form").animate(
-    {
-      height: "toggle",
-      "padding-top": "toggle",
-      "padding-bottom": "toggle",
-      opacity: "toggle",
-    },
-    "slow"
-  );
+var buttonclicked;
+$(".toggle").click(function(){
+if( buttonclicked!= true ) {
+    buttonclicked= true;
+    alert("Button is clicked for first time");
+}else{
+    alert("Button was clicked before");
+}
 });
+
+// $(".toggle").click(function () {
+//   $(this).children("i").toggleClass("fa-pencil");
+//   $(".form").animate(
+//     {
+//       height: "toggle",
+//       "padding-top": "toggle",
+//       "padding-bottom": "toggle",
+//       opacity: "toggle",
+//     },
+//     "slow"
+//   );
+// });
 
 // $("#slidey").slidey({
 //   interval: 8000,
